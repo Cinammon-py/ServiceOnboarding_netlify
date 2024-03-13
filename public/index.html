@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Onboarding Assessment</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Bussiness owner details-->
+
+    <form action="http://localhost:3000/submit-form" method="post">
+      <section>
+        <fieldset>
+          <div class="legendhead">
+            <p>Business Owner Details</p>
+          </div>
+          <div class="block1">
+            <h1>Business Owner Details</h1>
+            <label for="applicantCitizenship">Applicant Citizenship</label>
+            <select id="applicantCitizenship" name="applicantCitizenship" onchange="RWorFr(this)" required>
+              <option value="" disabled selected>Select citizenship</option>
+              <option value="Rwandan">Rwandan</option>
+              <option id="Foreigner" value="Foreigner">Foreigner</option>
+            </select>
+
+            <div id="ifRW" style="display: none">
+              <label for="identificationNumber">Identification Document Number</label>
+              <input type="text" id="identificationNumber" name="identificationNumber" placeholder="Enter Identification document number" />
+            </div>
+
+            <div id="ifFR" style="display: none">
+              <label for="passportNumber">Passport Number</label>
+              <input type="text" id="passportNumber" name="passportNumber" /><br />
+            </div>
+
+            <label for="OtherNames">Other Names</label>
+            <input type="text" id="OtherNames" name="OtherNames" required />
+
+            <label for="Surname">Surname</label>
+            <input type="text" id="Surname" name="Surname" required />
+
+            <label for="Nationality">Nationality</label>
+            <input type="text" id="Nationality" name="Nationality" required />
+
+            <label for="PhoneNumber">Phone Number</label>
+            <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="Enter phone number" />
+
+            <label for="EmailAddress">Email Address</label>
+            <input type="text" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address" />
+
+            <h1>Business Owner Address</h1>
+
+            <label for="Location">Location</label>
+            <select id="District" name="district" required>
+              <option value="" disabled selected>Select district</option>
+              <option value="Kigali">Kigali</option>
+              <option value="Northern Province">Northern Province</option>
+              <option value="Southern Province">Southern Province</option>
+              <option value="Eastern Province">Eastern Province</option>
+              <option value="Western Province">Western Province</option>
+            </select>
+          </div>
+        </fieldset>
+      </section>
+      <!-- Business Details -->
+      <section>
+        <fieldset>
+          <div class="legendhead">
+            <p>Business Details</p>
+          </div>
+          <div class="block1">
+            <h1>Business Details</h1>
+            <label for="Businesstype">Business Type</label>
+            <select id="Businesstype" name="Businesstype" required>
+              <option value="" disabled selected>Select Business Type</option>
+              <option value="Retailer">Retailer</option>
+              <option value="Wholesale">Wholesale</option>
+              <option value="Manufacturer">Manufacturer</option>
+            </select>
+
+            <label for="CompanyName">Company Name</label>
+            <input type="text" id="CompanyName" name="CompanyName" placeholder="Enter Company Name" required />
+
+            <label for="TINnumber">TIN Number</label>
+            <input type="number" id="TINnumber" name="TINnumber" placeholder="Enter TIN number" required />
+
+            <label for="RegistrationDate">Registration Date</label>
+            <input type="date" id="RegistrationDate" name="RegistrationDate" placeholder="Select date" required />
+
+            <h1>Business Address</h1>
+
+            <label for="Location">Location</label>
+            <select id="District" name="district" required>
+              <option value="" disabled selected>Select district</option>
+              <option value="Kigali">Kigali</option>
+              <option value="Northern Province">Northern Province</option>
+              <option value="Southern Province">Southern Province</option>
+              <option value="Eastern Province">Eastern Province</option>
+              <option value="Western Province">Western Province</option>
+            </select>
+          </div>
+        </fieldset>
+      </section>
+      <!-- Product Information-->
+      <section>
+        <fieldset>
+          <div class="legendhead">
+            <p>Product Information</p>
+          </div>
+          <div class="block1">
+            <h1>Importation Details</h1>
+            <label for="ImportationPurpose">Purpose of importation</label>
+            <select id="ImportationPurpose" name="ImportationPurpose" onchange="yesnoCheck(this)" required>
+              <option value="" disabled selected>Select the purpose of importation</option>
+              <option value="DirectSale">Direct sale</option>
+              <option value="PersonalUse">Personal use</option>
+              <option value="TrialUse">Trial use</option>
+              <option id="YesCheck" value="other">Other</option>
+            </select>
+
+            <div id="ifYes" style="display: none">
+              <label for="SpecifyPurposeImportation">Specify purpose of importation</label>
+              <input type="text" id="SpecifyPurposeImportation" name="SpecifyPurposeImportation" required /><br />
+            </div>
+
+            <h1>Product Details</h1>
+            <label for="ProductName">Product Name</label>
+            <input type="text" id="ProductName" name="ProductName" placeholder="Enter Product name" required />
+
+            <label for="ProductWeight">Product Weight</label>
+            <input type="number" id="ProductWeight" name="ProductWeight" required />
+
+            <label for="ProductDescription">Product Description</label>
+            <textarea id="ProductDescription" name="ProductDescription" required rows="5" cols="33"></textarea>
+
+            <label for="UnitOfMeasurement">Enter unit of measurement</label>
+            <select id="UnitOfMeasurement" name="UnitOfMeasurement" required>
+              <option value="" disabled selected>Enter unit of measurement</option>
+              <option value="Kgs">Kgs</option>
+              <option value="Tonnes">Tonnes</option>
+            </select>
+
+            <label for="ProductQuantinty">Product Quantity</label>
+            <input type="number" id="ProductQuantinty" name="ProductQuantinty" required />
+
+            <button type="submit">Submit</button>
+          </div>
+        </fieldset>
+      </section>
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
